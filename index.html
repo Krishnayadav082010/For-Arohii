@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Arohi ❤️</title>
+    <style>
+        /* Base Styling */
+        body {
+            background-color: #fff0f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Main Card Container */
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(255, 182, 193, 0.4);
+            z-index: 10;
+            max-width: 90%;
+            width: 350px;
+            border: 3px solid #ffccd5;
+            position: relative;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Photo Styling */
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 5px solid #ff4d6d;
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(255, 77, 109, 0.2);
+            /* Aapne rotate lagaya tha, maine yahan include kar diya hai */
+            transform: rotate(280deg);
+        }
+
+        /* Text Styling */
+        h1 {
+            color: #ff4d6d;
+            font-size: 1.8rem;
+            margin: 10px 0;
+        }
+
+        h2 {
+            color: #ff758f;
+            font-weight: 400;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #555;
+            line-height: 1.5;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .sticker {
+            font-size: 35px;
+            margin-bottom: 10px;
+            display: inline-block;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        button {
+            background: linear-gradient(45deg, #ff4d6d, #ff758f);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 77, 109, 0.3);
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Falling Hearts */
+        .heart {
+            position: absolute;
+            top: -10%;
+            z-index: 1;
+            animation: fall linear forwards;
+            pointer-events: none;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="sticker">🌸✨🎀</div>
+        
+        <img src="176763657972.jpg" alt="Arohi" class="profile-img">
+        
+        <h1>A Little Something for you!🌷❤️</h1>
+        <h2>Just because you're Amazing!</h2>
+        
+        <p>
+            I was thinking about you today and wanted to use my coding skills to make you Something unique. 
+            You do so much for me..✨🌸 And I wanted to make sure you know it doesn't go unnoticed. 
+            I Love You!❤️<br>
+            I'm so lucky to have you in my life!✨🧿
+        </p>
+        
+        <button onclick="celebrate()">Click for a Surprise!</button>
+    </div>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            const items = ['❤️', '💖', '🌸', '✨', '🍭', '🎀', '🧿'];
+            heart.innerHTML = items[Math.floor(Math.random() * items.length)];
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = Math.random() * 20 + 15 + 'px';
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+            heart.style.opacity = Math.random() * 0.7 + 0.3;
+            document.body.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 5000);
+        }
+
+        setInterval(createHeart, 300);
+
+        function celebrate() {
+            for(let i = 0; i < 30; i++) {
+                setTimeout(createHeart, i * 50);
+            }
+            alert("Babe, Please Never leave me...I'll be nothing without you..Stay happy always! 🌷✨");
+        }
+    </script>
+</body>
+</html>
